@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react"
 
 export default props => {
   return(
     <div>
-      <form>
+      <form >
         <input
           type="text"
           id="names"
@@ -18,6 +18,6 @@ export default props => {
         <button type="submit">Help!</button>
       </form>
     </div>
-  );
+  )
 }
 

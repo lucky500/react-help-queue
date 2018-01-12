@@ -1,5 +1,5 @@
-import React from 'react';
-import Ticket from './Ticket';
+import React from "react"
+import Ticket from "./Ticket"
 
 var masterTicketList = [
   {
@@ -17,13 +17,13 @@ var masterTicketList = [
     location: "9F",
     issue: "Donkey picture not displaying on hover in Zoology app. :("
   }
-];
+]
 
 
 function TicketList(props){
   return(
     <div>
-    <hr />
+      <hr />
       {masterTicketList.map((ticket, index) =>
         <Ticket 
           names={ticket.names}
@@ -36,4 +36,4 @@ function TicketList(props){
   )
 }
 
-export default TicketList;
+export default TicketList

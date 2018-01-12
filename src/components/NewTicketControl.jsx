@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import NewTicketForm from './NewTicketForm';
+import React, { Component } from "react"
+import NewTicketForm from "./NewTicketForm"
 
 class NewTicketControl extends Component {
 
   constructor(props){
-    super(props);
+    super(props)
     this.state = {
       formVisibleOnPage: false
     }
-    this.handleDisplayingNewTicketForm = this.handleDisplayingNewTicketForm.bind(this);
+    this.handleDisplayingNewTicketForm = this.handleDisplayingNewTicketForm.bind(this)
   }
 
   handleDisplayingNewTicketForm(event){
-    this.setState({ formVisibleOnPage: true });
+    this.setState({ formVisibleOnPage: true })
   }
 
   render(){
-    let formAreaContent = null;
+    let formAreaContent = null
     if (this.state.formVisibleOnPage){
       formAreaContent = <NewTicketForm />
     } else {
@@ -31,4 +31,4 @@ class NewTicketControl extends Component {
   }
 }
 
-export default NewTicketControl;
+export default NewTicketControl
