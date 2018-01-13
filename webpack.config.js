@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -44,6 +45,23 @@ module.exports = {
             "react-hot-loader/babel"
           ]
         }
+      },
+      {
+        test: /\.(png|gif|jp(e*)g|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }]
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({ 
+          fallback: 'style-loader', 
+          use: 'css-loader' 
+        })
       }
     ]
   },
@@ -56,5 +74,6 @@ module.exports = {
       title: 'React Help Queue',
       filename: resolve(__dirname, "build", "index.html"),
     }),
+    new ExtractTextPlugin('app.css')
   ]
 };
