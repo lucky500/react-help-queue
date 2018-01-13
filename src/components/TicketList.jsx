@@ -1,6 +1,7 @@
 import React from "react"
 import Ticket from "./Ticket"
 
+
 var masterTicketList = [
   {
     names: "Thato and Haley",
@@ -35,5 +36,7 @@ function TicketList(props){
     </div>
   )
 }
+
+
 
 export default TicketList

@@ -1,17 +1,17 @@
-import React from "react"
-import Header from "./Header"
-import TicketList from "./TicketList"
-import NewTicketControl from "./NewTicketControl"
+import React from 'react';
+import Header from './Header';
+import TicketList from './TicketList';
+import NewTicketForm from './NewTicketForm';
+import { Switch, Route } from 'react-router-dom';
 
-
-function App(props){
+export default props => {
   return (
     <div>
-      <Header />
-      <TicketList />
-      <NewTicketControl />
+      <Header/>
+      <Switch>
+        <Route exact path='/' component={TicketList} />
+        <Route path='/newticket' component={NewTicketForm} />
+      </Switch>
     </div>
-  )
+  );
 }
-
-export default App
